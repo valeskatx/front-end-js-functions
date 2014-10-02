@@ -22,9 +22,9 @@ var angryGandalf = function(type) {
  
 }
  
-// console.log(angryGandalf('grey'));  // Expect "YOU...SHALL NOT... PASS!" 
-// console.log(angryGandalf('white')); // Expect "You merely passed me to your demise."
-// console.log(angryGandalf(2)); // Expect "I don't think I'm Gandalf anymore."
+console.log(angryGandalf('grey'));  // Expect "YOU...SHALL NOT... PASS!" 
+console.log(angryGandalf('white')); // Expect "You merely passed me to your demise."
+console.log(angryGandalf(2)); // Expect "I don't think I'm Gandalf anymore."
  
  
 /**

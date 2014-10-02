@@ -141,8 +141,8 @@ var convertTemp = function (number, inputType){
 	// Return that number
 	return temp;
 }
-console.log(convertTemp(32, 'F')); // 0
-console.log(convertTemp(100, 'C')); // 212
+// console.log(convertTemp(32, 'F')); // 0
+// console.log(convertTemp(100, 'C')); // 212
  
 
 /**
@@ -151,15 +151,34 @@ console.log(convertTemp(100, 'C')); // 212
 
 // Create a function called waterState. This function will tell you if a temperature is boiling, liquid, or freezing:
 // Give it 2 parameters, one that's a number and the second that's a inputType, ie 'F' or 'C'. 
- 	
+ var waterState = function (temp, inputType){
  	// Write a conditional and save proper water state variables based on if the inputType parameter is 'C' or 'F'.
-
+ 	var boiling, freezing, standard;
+ 	if (inputType === "F"){
+ 		boiling = 212;
+ 		freezing = 32;
+ 		standard = "Fahrenheit";
+ 	}
+ 	else if (inputType === "C"){
+ 		boiling = 100;
+ 		freezing = 0;
+ 		standard = "Celsius";
+ 	}
 	// Define a variable that will save the string of the conditional below.
- 
+ 	var state;	
 	// Write a conditional if then statement that saves 'boiling', 'liquid', or 'freezing' depending on what the temperature is.
-	
-    // return string "It's currently XXX degrees in the XXX standard and water is in a XXX state.'
-        
-// console.log(waterState(50, 'C')); // "It's currently 50 degrees in the Celsius standard and water is liquid. "
-// console.log(waterState(213, 'F')); // "It's currently 213 degrees in the Fahrenheit standard and water is boiling. "
-// console.log(waterState(-1, 'F')); // "It's currently -1 degrees in the Fahrenheit standard and water is liquid. " 
+	if (temp <= freezing){
+		state = "freezing";
+	}
+	else if (temp >= boiling){
+		state = "boiling";
+	}
+	else {
+		state = "liquid";
+	}
+    return "It's currently " + temp + " degrees in the " + standard + " standard and water is in a " + state + " state.";
+
+ }
+console.log(waterState(50, 'C')); // "It's currently 50 degrees in the Celsius standard and water is liquid. "
+console.log(waterState(213, 'F')); // "It's currently 213 degrees in the Fahrenheit standard and water is boiling. "
+console.log(waterState(-1, 'F')); // "It's currently -1 degrees in the Fahrenheit standard and water is liquid. " 

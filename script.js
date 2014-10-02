@@ -22,9 +22,9 @@ var angryGandalf = function(type) {
  
 }
  
-console.log(angryGandalf('grey'));  // Expect "YOU...SHALL NOT... PASS!" 
-console.log(angryGandalf('white')); // Expect "You merely passed me to your demise."
-console.log(angryGandalf(2)); // Expect "I don't think I'm Gandalf anymore."
+// console.log(angryGandalf('grey'));  // Expect "YOU...SHALL NOT... PASS!" 
+// console.log(angryGandalf('white')); // Expect "You merely passed me to your demise."
+// console.log(angryGandalf(2)); // Expect "I don't think I'm Gandalf anymore."
  
  
 /**
@@ -55,16 +55,18 @@ var tellFortune = function(job,location,partner,children) {
 **/
  
 // Create function with name calculateAge and appropriate parameters
- 
-	// Define number variable age and save the age based on the years given, ie 2010-1990 = '20'
- 
-	// Define a number variable that will account for month discrepcies, ie Jan 2010 - August 1990 = '19'
-    
+ var calculateAge = function(birthYear,  currentYear){
+
+	// Define a number variable named age and save the age based on the years given, ie 2010-1990 = '20'
+ 	var age = currentYear - birthYear;
+	// Define a number variable that will account for month discrepancies, ie Jan 2010 - August 1990 = '19'
+    var discrepancy = age - 1;
     // return string that says 'You are either XX or YY'
- 
-// console.log(calculateAge(1984, 2012)); // You are either 28 or 27 
-// console.log(calculateAge(1988, 2012)); // You are either 24 or 23 
-// console.log(calculateAge(1982, 2012)); // You are either 30 or 29 
+    return "You are either " + age + " or " + discrepancy;
+ }
+console.log(calculateAge(1984, 2014)); // You are either 28 or 27 
+console.log(calculateAge(1988, 2014)); // You are either 24 or 23 
+console.log(calculateAge(1982, 2014)); // You are either 30 or 29 
  
  
  

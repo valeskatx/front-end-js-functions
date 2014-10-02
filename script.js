@@ -87,9 +87,9 @@ var tellFortune = function(job,location,partner,children) {
     // Return Message
     return message;
 }
-console.log(calculateSupply(28, 36)); // You will need 946080 cups of tea to last you until the ripe old age of 100
-console.log(calculateSupply(28, 2.5)); // You will need 65700 cups of tea to last you until the ripe old age of 100
-console.log(calculateSupply(28, 400));  // You will need 10512000 cups of tea to last you until the ripe old age of 100 
+// console.log(calculateSupply(28, 36)); // You will need 946080 cups of tea to last you until the ripe old age of 100
+// console.log(calculateSupply(28, 2.5)); // You will need 65700 cups of tea to last you until the ripe old age of 100
+// console.log(calculateSupply(28, 400));  // You will need 10512000 cups of tea to last you until the ripe old age of 100 
  
  
  
@@ -98,24 +98,28 @@ console.log(calculateSupply(28, 400));  // You will need 10512000 cups of tea to
 **/
  
 // Create function with name calcDiameterFromRadius and appropriate parameters
- 
+ var calcDiameterFromRadius = function(radius){
 	// Define string variable that will have that output
-    
+    var diameter = radius * 2;
     // return string to pass the tests below
- 
-// Create function with name calcCircumfrence and appropriate parameters
- 
+    return diameter;
+ }
+// Create function with name calcCircumference and appropriate parameters
+ var calcCircumference = function (radius){
 	// Define string variable that will have that output
- 
+ 	var circumference;
 	// Get Diameter from radius with calcDiameterFromRadius() made above
-    
+    var diameter = calcDiameterFromRadius(radius);
+    circumference = diameter * 3.14;
     // Create string to pass test below
- 
+ 	var message = "The circumference is " + circumference;
     // return string
+    return message;
+}
  
-// console.log(calcCircumfrence(3)); // The circumference is 18.84
-// console.log(calcCircumfrence(4)); // The circumference is 25.12
-// console.log(calcCircumfrence(5)); // The circumference is 31.4
+console.log(calcCircumference(3)); // The circumference is 18.84
+console.log(calcCircumference(4)); // The circumference is 25.12
+console.log(calcCircumference(5)); // The circumference is 31.4
 
 
 /**

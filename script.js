@@ -117,9 +117,9 @@ var tellFortune = function(job,location,partner,children) {
     return message;
 }
  
-console.log(calcCircumference(3)); // The circumference is 18.84
-console.log(calcCircumference(4)); // The circumference is 25.12
-console.log(calcCircumference(5)); // The circumference is 31.4
+// console.log(calcCircumference(3)); // The circumference is 18.84
+// console.log(calcCircumference(4)); // The circumference is 25.12
+// console.log(calcCircumference(5)); // The circumference is 31.4
 
 
 /**
@@ -128,15 +128,21 @@ console.log(calcCircumference(5)); // The circumference is 31.4
  
 // Create a function called convertTemp:
 // Give it 2 parameters, the first being number, second being inputType. inputType should accept strings 'F' or 'C'
-	
+var convertTemp = function (number, inputType){	
 	// Define the variables used
- 
+ 	var temp;
 	// Convert the number from the inputType to the opposite
-	
+	if (inputType == "F"){
+		temp = (number - 32) / 1.8;
+	} 
+	else if (inputType == "C"){
+		temp = (number * 1.8) + 32;
+	}
 	// Return that number
-
-// console.log(convertTemp(32, 'F')); // 0
-// console.log(convertTemp(100, 'C')); // 212
+	return temp;
+}
+console.log(convertTemp(32, 'F')); // 0
+console.log(convertTemp(100, 'C')); // 212
  
 
 /**

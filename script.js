@@ -64,9 +64,9 @@ var tellFortune = function(job,location,partner,children) {
     // return string that says 'You are either XX or YY'
     return "You are either " + age + " or " + discrepancy;
  }
-console.log(calculateAge(1984, 2014)); // You are either 28 or 27 
-console.log(calculateAge(1988, 2014)); // You are either 24 or 23 
-console.log(calculateAge(1982, 2014)); // You are either 30 or 29 
+// console.log(calculateAge(1984, 2014)); // You are either 28 or 27 
+// console.log(calculateAge(1988, 2014)); // You are either 24 or 23 
+// console.log(calculateAge(1982, 2014)); // You are either 30 or 29 
  
  
  
@@ -75,18 +75,21 @@ console.log(calculateAge(1982, 2014)); // You are either 30 or 29
 **/
  
 // Create function with name calculateSupply and appropriate parameters
- 
+ var calculateSupply = function(currentAge, cupsPerDay){
 	// define max age as 100
-    
+    var maxAge = 100;
     // Do math to substract max string - string
- 
+ 	var totalYears = maxAge - currentAge;
+ 	var totalDays = totalYears * 365;
+ 	var cups = totalDays * cupsPerDay;
     // Create Message
- 
+ 	var message = "You will need " + cups + " cups of tea to last you until the ripe old age of " + maxAge;
     // Return Message
- 
-// console.log(calculateSupply(28, 36)); // You will need 946080 cups of tea to last you until the ripe old age of 100
-// console.log(calculateSupply(28, 2.5)); // You will need 65700 cups of tea to last you until the ripe old age of 100
-// console.log(calculateSupply(28, 400));  // You will need 10512000 cups of tea to last you until the ripe old age of 100 
+    return message;
+}
+console.log(calculateSupply(28, 36)); // You will need 946080 cups of tea to last you until the ripe old age of 100
+console.log(calculateSupply(28, 2.5)); // You will need 65700 cups of tea to last you until the ripe old age of 100
+console.log(calculateSupply(28, 400));  // You will need 10512000 cups of tea to last you until the ripe old age of 100 
  
  
  
